@@ -177,6 +177,7 @@ export default function App() {
     );
   };
 
+
   // Editar aluno
   const editarAluno = (aluno) => {
     setEditingAluno(aluno);
