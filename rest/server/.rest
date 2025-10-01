@@ -1,0 +1,59 @@
+@baseURL = http://localhost:3000/
+
+@alunoID = 68b8d90b44c2e274befb2c6a
+
+### Get API Info
+GET {{baseURL}}
+
+### GET all alunos
+GET {{baseURL}}alunos
+
+### Get aluno by id
+GET {{baseURL}}alunos/{{alunoID}}
+
+### Get aluno by matricula
+GET {{baseURL}}alunos/matricula/12345
+
+### Get CEP info
+GET {{baseURL}}cep/01310-100
+
+### Create new aluno
+POST {{baseURL}}alunos
+Content-Type: application/json
+
+{
+    "matricula": "12345",
+    "nome": "João Silva",
+    "endereco": {
+        "cep": "01310-100",
+        "logradouro": "Avenida Paulista",
+        "cidade": "São Paulo",
+        "bairro": "Bela Vista",
+        "estado": "SP",
+        "numero": "1000",
+        "complemento": "Apto 101"
+    },
+    "cursos": ["Engenharia de Software", "Ciência de Dados"]
+}
+
+### Update aluno
+PUT {{baseURL}}alunos/{{alunoID}}
+Content-Type: application/json
+
+{
+    "matricula": "12345",
+    "nome": "João Silva Santos",
+    "endereco": {
+        "cep": "01310-100",
+        "logradouro": "Avenida Paulista",
+        "cidade": "São Paulo",
+        "bairro": "Bela Vista",
+        "estado": "SP",
+        "numero": "1000",
+        "complemento": "Apto 201"
+    },
+    "cursos": ["Engenharia de Software", "Ciência de Dados", "Inteligência Artificial"]
+}
+
+### Delete aluno
+DELETE http://localhost:3000/alunos/68cb399bf5055dd8978445e8
